@@ -18,7 +18,7 @@ pretty_html = soup.prettify()
 
 # Create a file to write to
 f = csv.writer(open('screwdriver.csv', 'w'))
-f.writerow(['Verified Buyer', 'Numerical Rating', 'Helpful', 'Not Helpful', 'Written Review'])
+f.writerow(['Numerical Rating ', 'Helpful ', 'Not Helpful ', 'Written Review'])
 
 #################
 
@@ -35,11 +35,16 @@ except:
     pass
 
 for _ in range(60):
+    for review_data in soup.find_all('div', attrs = {"class":"jdgm-rev__rating"}):
+        if (review_data.find("data-score")):
+            content = review_data.find("data-score").text
+            print(content + ", ")
+            f.writerow([content])
+
     for review_data in soup.find_all('div', attrs = {"class":"jdgm-rev__content"}):
         if (review_data.find("p")):
             content = review_data.find("p").text
-            print(content)
-            print("***********************")
+            print(content + ", ")
             f.writerow([content])
 
     next_page = driver.find_element(By.CLASS_NAME, "jdgm-paginate__page jdgm-paginate__next-page")
