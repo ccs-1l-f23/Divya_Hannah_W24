@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import requests
+import Divya_Hannah_W24.scrape_requests as scrape_requests
 import csv
 import requests
 
