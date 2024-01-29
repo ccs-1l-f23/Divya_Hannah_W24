@@ -11,6 +11,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
+import requests
+
 url = "https://www.lttstore.com/products/bits"
 
 data = scrape_requests.get(url)

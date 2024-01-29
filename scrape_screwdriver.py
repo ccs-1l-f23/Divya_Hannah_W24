@@ -11,8 +11,6 @@ soup = BeautifulSoup(data.text, "html.parser")
 
 pretty_html = soup.prettify()
 
-# print(pretty_html)
-
 # Create a file to write to
 f = csv.writer(open('screwdriver.csv', 'w'))
 f.writerow(['Verified Buyer', 'Numerical Rating', 'Helpful', 'Not Helpful', 'Written Review'])
