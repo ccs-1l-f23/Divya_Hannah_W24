@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from bs4 import BeautifulSoup
-import scrape_requests
+import Divya_Hannah_W24.scrape_requests as scrape_requests
 import csv
 
 url = "https://www.lttstore.com/products/bits"
