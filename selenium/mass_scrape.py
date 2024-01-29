@@ -4,7 +4,7 @@ import time
 from selenium.webdriver.common.action_chains import ActionChains
 
 from bs4 import BeautifulSoup
-import Divya_Hannah_W24.scrape_requests as scrape_requests
+import Divya_Hannah_W24.pyrequests.scrape_requests as scrape_requests
 import csv
 
 from selenium.webdriver.support.ui import WebDriverWait
