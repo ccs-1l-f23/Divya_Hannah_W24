@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 from bs4 import BeautifulSoup
-import requests
+import scrape_requests
 import csv
 
 url = "https://www.lttstore.com/products/bits"
 
-data = requests.get(url)
+data = scrape_requests.get(url)
 
 soup = BeautifulSoup(data.text, "html.parser")
 
