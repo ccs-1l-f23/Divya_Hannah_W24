@@ -39,4 +39,3 @@ with open('reviews.csv', 'a') as csv_file:
 
 
 
-
