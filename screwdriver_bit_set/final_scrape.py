@@ -1,9 +1,9 @@
 from bs4 import BeautifulSoup
 import csv
 
-f = csv.writer(open('screwdriver.csv', 'w'))
+f = csv.writer(open('scraped_reviews.csv', 'w'))
 
-with open('reviews_final.csv') as html_obj:
+with open('html_reviews.csv') as html_obj:
     for row in html_obj: 
         soup = BeautifulSoup(row, 'html.parser')
 
