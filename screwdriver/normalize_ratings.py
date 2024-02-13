@@ -5,7 +5,7 @@ import csv
 
 ratings = []
 revised_ratings = []
-with open('reviews.csv') as html_obj:
+with open('screw_csv/scraped_screwdriver_reviews.csv') as html_obj:
     found_ratings = False
     for line in html_obj:
         if "Helpful" in line:

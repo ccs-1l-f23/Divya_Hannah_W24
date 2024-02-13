@@ -17,7 +17,7 @@ while True:
 
     f.writerow(['Numerical Ratings:'])
 
-    for numerical_rating in soup.find_all():
+    for numerical_rating in soup.find_all('div', class_='jdgm-rev__content'):
         if "data-score" in numerical_rating.attrs:
             content = numerical_rating["data-score"]
             print(content)
@@ -26,7 +26,7 @@ while True:
     print("**************")
     f.writerow(['Helpful:'])
 
-    for helpful in soup.find_all():
+    for helpful in soup.find_all('div', class_='jdgm-rev__content'):
         if "data-thumb-up-count" in helpful.attrs:
             content = helpful["data-thumb-up-count"]
             print(content)
