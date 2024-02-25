@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup as bs
 import numpy as np
+import pandas as pd
 
 html_file = open('bit_csv/html_bit_reviews.csv', 'r')
 html_content = html_file.read()
@@ -36,9 +37,24 @@ for not_helpful in soup.find_all():
                 thumbs_down_list.append(content)
 
 
-print(name_list)
-print(star_list)
-print(thumbs_down_list)
+# print(name_list)
+# print(star_list)
+# print(thumbs_down_list)
+
+dict = {'Name': name_list, "Star Rating": star_list, "Thumbs Down": thumbs_down_list}
+
+df = pd.DataFrame(dict)
+
+final_df = df.to_html()
+
+with pd.option_context('display.max_rows', None,
+                       'display.max_columns', None
+                       ):  
+    print(final_df)
+
+reviews_file = open('Divya_Hannah_W24/website/templates/reviews.html')
+
+
 
 
 
